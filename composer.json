@@ -11,7 +11,8 @@
         "test-unit": "phpunit --configuration tests/phpunit.xml --testsuite unit",
         "test-integration": "phpunit --configuration tests/phpunit.xml --testsuite integration",
         "test-filter": "phpunit --configuration tests/phpunit.xml --filter ",
-        "test-coverage": "phpunit --configuration tests/phpunit.xml --coverage-html tests/coverage/html"
+        "test-coverage:text": "phpunit --configuration tests/phpunit.xml --coverage-text",
+        "test-coverage:report": "phpunit --configuration tests/phpunit.xml --coverage-html tests/coverage/html"
     },
     "require": {
         "php": "^8.0"

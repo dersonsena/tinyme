@@ -9,11 +9,11 @@ use App\Domain\ValueObject\UrlType;
 use DomainException;
 
 /**
- * @property-read string|int|null $id = null
- * @property-read string $original
- * @property-read string $shortened
- * @property-read UrlType $type
- * @property-read string $alias
+ * @property string|int|null $id = null
+ * @property string $original
+ * @property string $shortened
+ * @property UrlType $type
+ * @property string $alias
  */
 final class Url
 {

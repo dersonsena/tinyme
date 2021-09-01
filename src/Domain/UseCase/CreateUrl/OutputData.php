@@ -10,7 +10,7 @@ use DomainException;
  * @property-read string $id
  * @property-read string $originalUrl
  * @property-read string $shortenedUrl
- * @property-read string $path
+ * @property-read string $alias
  */
 final class OutputData
 {
@@ -18,7 +18,7 @@ final class OutputData
         private string|int $id,
         private string $originalUrl,
         private string $shortenedUrl,
-        private string $path
+        private string $alias
     ) {}
 
     public static function create(array $values): self
@@ -33,7 +33,7 @@ final class OutputData
             $values['id'],
             $values['originalUrl'],
             $values['shortenedUrl'],
-            $values['path']
+            $values['alias']
         );
     }
 

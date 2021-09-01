@@ -7,7 +7,7 @@ require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 $inputData = InputData::create([
     'url' => 'http://www.helloworld.com.br',
-    'type' => 'random'
+    'type' => 'R'
 ]);
 
 $createUrl = new CreateUrl();

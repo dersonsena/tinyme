@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(-1);
+error_reporting(E_ALL);
 
 $composerAutoload = __DIR__ . '/../vendor/autoload.php';
 

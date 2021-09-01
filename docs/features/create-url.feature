@@ -4,7 +4,7 @@ Feature: Create an URL
     And a valid URL
     And a URL's type is random
     When the user clicks on the button
-    Then it should generate a unique URL with random path
+    Then it should generate an unique URL with random path
 
   Scenario: Create a custom URL
     Given a long URL
@@ -12,7 +12,7 @@ Feature: Create an URL
     And a URL's type is random
     And a custom text to URL
     When the user clicks the button
-    Then it should generate a unique URL the custom text in path
+    Then it should generate an unique URL the custom text in path
 
   Scenario: Create an existing custom URL
     Given a long URL

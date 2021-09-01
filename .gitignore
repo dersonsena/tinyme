@@ -1,5 +1,6 @@
 # phpstorm project files
 .idea
+vendor
 
 # netbeans project files
 nbproject
@@ -12,22 +13,8 @@ nbproject
 # windows thumbnail cache
 Thumbs.db
 
-# composer vendor dir
-/vendor
-
-# composer itself is not needed
-composer.phar
-
 # Mac DS_Store Files
 .DS_Store
-
-# phpunit itself is not needed
-phpunit.phar
-
-phpunit.xml
-.php_cs.cache
+.docker
 .phpunit.result.cache
 tests/coverage
-tests/.phpunit.result.cache
-.docker
-.docker-sync

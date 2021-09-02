@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace App\Domain\ValueObject;
 
+use App\Shared\Domain\Contracts\ValueObject;
 use DomainException;
 
-final class UrlType
+final class UrlType implements ValueObject
 {
     private string $value;
 
@@ -31,5 +32,10 @@ final class UrlType
     public function value(): string
     {
         return $this->value;
+    }
+
+    public function __toString(): string
+    {
+        return (string)$this->value();
     }
 }

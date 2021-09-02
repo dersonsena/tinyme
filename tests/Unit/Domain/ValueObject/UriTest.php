@@ -25,4 +25,10 @@ class UriTest extends TestCaseBase
         $uri = new Uri('http://valid-url');
         $this->assertSame($uri->value(), 'http://valid-url');
     }
+
+    public function testItShouldReturnTheUrlWhenTheObjectIsConvertedToString()
+    {
+        $uri = new Uri('http://valid-url');
+        $this->assertSame((string)$uri, 'http://valid-url');
+    }
 }

@@ -22,7 +22,13 @@ class UrlTypeTest extends TestCaseBase
 
     public function testItShouldReturnTheTypeWhenAValidTypeIsPassed()
     {
-        $uri = new UrlType(UrlType::TYPE_CUSTOM);
-        $this->assertSame($uri->value(), UrlType::TYPE_CUSTOM);
+        $type = new UrlType(UrlType::TYPE_CUSTOM);
+        $this->assertSame($type->value(), UrlType::TYPE_CUSTOM);
+    }
+
+    public function testItShouldReturnTheUrlWhenTheObjectIsConvertedToString()
+    {
+        $type = new UrlType(UrlType::TYPE_CUSTOM);
+        $this->assertSame((string)$type, UrlType::TYPE_CUSTOM);
     }
 }

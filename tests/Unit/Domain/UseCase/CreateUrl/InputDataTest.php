@@ -22,22 +22,22 @@ class InputDataTest extends TestCaseBase
     public function testItShouldThrowAnExceptionWhenInvalidPropertyIsRead()
     {
         $this->expectException(DomainException::class);
-        $url = InputData::create($this->values);
-        $url->invalidProp;
+        $inputData = InputData::create($this->values);
+        $inputData->invalidProp;
     }
 
     public function testItShouldReturnTheRightValuesWhenMagicGetMethodIsCalled()
     {
-        $url = InputData::create($this->values);
-        $this->assertSame($url->url, $this->values['url']);
-        $this->assertSame($url->type, $this->values['type']);
+        $inputData = InputData::create($this->values);
+        $this->assertSame($inputData->url, $this->values['url']);
+        $this->assertSame($inputData->type, $this->values['type']);
     }
 
     public function testItShouldThrowAnExceptionWhenSomePropertyIsChanged()
     {
         $this->expectException(DomainException::class);
-        $url = InputData::create($this->values);
-        $url->url = 'http://another-url';
-        $url->type = 'C';
+        $inputData = InputData::create($this->values);
+        $inputData->url = 'http://another-url';
+        $inputData->type = 'C';
     }
 }

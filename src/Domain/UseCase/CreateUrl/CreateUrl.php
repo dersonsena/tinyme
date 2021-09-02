@@ -7,6 +7,7 @@ namespace App\Domain\UseCase\CreateUrl;
 use App\Domain\Contracts\UrlAliasGenerator;
 use App\Domain\Entity\Url;
 use App\Domain\Repository\UrlRepository;
+use DateTimeInterface;
 
 final class CreateUrl
 {
@@ -22,7 +23,8 @@ final class CreateUrl
             'original' => $inputData->url,
             'shortened' => sprintf('https://tinyme.cc/%s', $urlAlias),
             'type' => $inputData->type,
-            'alias' => $urlAlias
+            'alias' => $urlAlias,
+            'createdAt' => '2021-09-02T14:50:30-03:00'
         ]);
 
         $url = $this->urlRepository->add($url);
@@ -31,7 +33,8 @@ final class CreateUrl
             'id' => $url->id,
             'originalUrl' => $url->original->value(),
             'shortenedUrl' => $url->shortened->value(),
-            'alias' => $url->alias
+            'alias' => $url->alias,
+            'createdAt' => $url->createdAt->format(DateTimeInterface::ATOM)
         ]);
     }
 }

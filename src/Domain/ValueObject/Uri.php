@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace App\Domain\ValueObject;
 
+use App\Shared\Domain\Contracts\ValueObject;
 use DomainException;
 
-final class Uri
+final class Uri implements ValueObject
 {
     private string $uri;
 
@@ -26,5 +27,10 @@ final class Uri
     public function value(): string
     {
         return $this->uri;
+    }
+
+    public function __toString(): string
+    {
+        return (string)$this->value();
     }
 }

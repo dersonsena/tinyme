@@ -7,6 +7,7 @@ use App\Domain\Entity\Url;
 use App\Domain\Repository\UrlRepository;
 use App\Domain\UseCase\CreateUrl\CreateUrl;
 use App\Domain\UseCase\CreateUrl\InputData;
+use DateTimeInterface;
 use Tests\TestCaseBase;
 
 class CreateUrlTest extends TestCaseBase
@@ -45,6 +46,7 @@ class CreateUrlTest extends TestCaseBase
         $result = $createUrl->execute($inputData);
 
         $this->assertNotNull($result->id);
+        $this->assertNotNull($result->createdAt);
         $this->assertSame($result->alias, $urlAliasGenerator->getAlias());
         $this->assertSame($result->originalUrl, $inputData->url);
         $this->assertSame($result->shortenedUrl, sprintf('https://tinyme.cc/%s', $urlAliasGenerator->getAlias()));
